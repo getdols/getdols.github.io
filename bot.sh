@@ -20,19 +20,19 @@ if [ -z "${timer}" ] || [ -z "${links}" ]; then
     usage
 fi
 echo "Checking update Chrome and related package..."
-#wget --no-check-certificate -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+wget --no-check-certificate -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
-#apt-get update
-#apt-get clean
-#apt-get autoclean
-#apt-get autoremove -y
-#apt-get install -y psmisc
-#apt-get install -y xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xfonts-cyrillic x11-apps
-#apt-get install -y gtk2-engines-pixbuf libexif12 libxpm4 libxrender1 libgtk2.0-0
-#apt-get install -y libnss3 libgconf-2-4
-#apt-get install -y google-chrome-stable
-#dpkg --configure -a
-#apt-get install -f -y
+apt-get update
+apt-get clean
+apt-get autoclean
+apt-get autoremove -y
+apt-get install -y psmisc
+apt-get install -y xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xfonts-cyrillic x11-apps
+apt-get install -y gtk2-engines-pixbuf libexif12 libxpm4 libxrender1 libgtk2.0-0
+apt-get install -y libnss3 libgconf-2-4
+apt-get install -y google-chrome-stable
+dpkg --configure -a
+apt-get install -f -y
 if [[ `lsb_release -rs` == "12.04" ]]
 then
     apt-get install -y defoma x-ttcidfont-conf

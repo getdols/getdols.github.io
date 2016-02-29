@@ -54,7 +54,7 @@ do
     Xvfb :1 -screen 1 1024x768x16 -nolisten tcp & disown
     echo "Starting chrome TE viewer..."
     echo "Open link $links"
-    DISPLAY=:1.1 google-chrome --no-sandbox --user-data-dir="/root/chromeBotTE" --disable-popup-blocking "$links" & disown
+    DISPLAY=:1.1 google-chrome --no-sandbox --user-data-dir="/root/chromeBotTE" --disable-popup-blocking $links & disown
     chromePID=$!
     sleep ${timer}
     echo "Kill chrome PID $chromePID"
